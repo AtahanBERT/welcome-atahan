@@ -1,8 +1,8 @@
 {
-  "name": "borangkdn-welcome-bot",
+  "name": "Zelvos-welcome-bot",
   "version": "0.0.1",
-  "description": "BoranGkdn Çok Tokenli Welcome Bot",
-  "main": "borangkdn.js",
+  "description": "Zelvos Çok Tokenli Welcome Bot",
+  "main": "zelvos.js",
   "scripts": {
     "start": "node ."
   },
@@ -12,9 +12,5 @@
     "ffmpeg": "0.0.4",
     "node-opus": "^0.3.3",
     "opusscript": "^0.0.8"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^7.17.0"
   }
 }
