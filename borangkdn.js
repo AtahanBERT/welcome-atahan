@@ -1,51 +1,23 @@
-const { Client, Collection, Intents } = require("discord.js");
-const client = global.client = new Client({
-  intents: [
-    Intents.FLAGS.GUILDS,
-    Intents.FLAGS.GUILD_MEMBERS,
-    Intents.FLAGS.GUILD_MESSAGES,
-    Intents.FLAGS.GUILD_VOICE_STATES,
-    Intents.FLAGS.GUILD_PRESENCES,
-  ]
-});
-const dotenv = require("dotenv");
-dotenv.config();
-const { readdir } = require("fs");
-require("moment-duration-format");
-const commands = client.commands = new Collection();
-const aliases = client.aliases = new Collection();
-client.cooldown = new Map();
-client.commandblocked = [];
+const { Client } = require("discord.js");
+const { channels, staffRoles, unregisterRoles, welcomeSound, staffSound, tokens } = require("./settings.json");
 
-require("./src/helpers/function")(client);
-
-readdir("./src/commands/", (err, files) => {
-  if (err) console.error(err)
-  files.forEach(f => {
-    readdir("./src/commands/" + f, (err2, files2) => {
-      if (err2) console.log(err2)
-      files2.forEach(file => {
-        let prop = require(`./src/commands/${f}/` + file);
-        console.log(`[sikerler] ${prop.name} yüklendi!`);
-        commands.set(prop.name, prop);
-        prop.aliases.forEach(alias => {
-          aliases.set(alias, prop.name);
-        });
-      });
-    });
+ tokens.forEach((token, i) => {
+  const client = new Client();
+  let connection;
+  client.on("ready", async () => connection = await client.channels.cache.get(channels[i]).join());
+    
+  client.on("voiceStateUpdate", async (oldState, newState) => {
+    if ((oldState.channelID && !newState.channelID) || (oldState.channelID && newState.channelID && oldState.channelID === newState.channelID) || newState.member.user.bot || newState.channelID !== channels[i]) return;
+    const hasStaff = newState.channel.members.some((x)=> staffRoles.some((r) => x.roles.cache.has(r)));
+    const staffSize = newState.channel.members.filter((x) => staffRoles.some((r) => x.roles.cache.has(r))).size;
+    const unregisterSize = newState.channel.members.filter((x) => unregisterRoles.some((r) => x.roles.cache.has(r))).size;
+    if (!hasStaff && unregisterSize === 1) await connection.play(welcomeSound);
+    else if (hasStaff && staffSize === 1 && unregisterSize === 1) await connection.play(staffSound);
   });
-});
 
-readdir("./src/events", (err, files) => {
-  if (err) return console.error(err);
-  files.filter((file) => file.endsWith(".js")).forEach((file) => {
-    let prop = require(`./src/events/${file}`);
-    if (!prop.conf) return;
-    client.on(prop.conf.name, prop);
-    console.log(`[sikerler] ${prop.conf.name} yüklendi!`);
-  });
+  
+  client.on("ready", async () => {
+  client.user.setPresence({ activity: { name: "YOUTUBE BORANGKDN" }, status: "idle" });
+  })
+  client.login(token).then(() => console.log(`${client.user.tag} Aktif!`)).catch(() => console.error(`${token} Tokeni aktif edilemedi!`));
 });
-
-client.login(process.env.token)
-  .then(() => console.log(`Bot ${client.user.username} olarak giriş yaptı!`))
-  .catch((err) => console.log(`Bot Giriş yapamadı sebep: ${err}`));
