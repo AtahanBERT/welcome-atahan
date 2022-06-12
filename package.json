@@ -1,10 +1,10 @@
 {
-  "name": "Zelvos-welcome-bot",
+  "name": "ZivoCOde-welcome-bot",
   "version": "0.0.1",
-  "description": "Zelvos Çok Tokenli Welcome Bot",
-  "main": "zelvos.js",
+  "description": "Zivo Çok Tokenli Welcome Bot",
+  "main": "zivo.js",
   "scripts": {
-    "start": "node ."
+    "start": "node zivo.js"
   },
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
