@@ -1,4 +1,4 @@
-# ZivoCode Welcome-Bot Altyapısı
+# Welcome-Bot Altyapısı
 Discord sunucularınızda kullanmanız için kodlanmış bir " Sesli Karşılama Botu " projesi.
 
 # Nasıl Kullanılır?

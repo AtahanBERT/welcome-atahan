@@ -1,19 +1,19 @@
 {
   "tokens": [
-    "OTY4ODg3NjU3MTQyODM3Mjg4.Gx60c7.fNEkznIYv9G7IVp6uocnUS0Dhgs1Glbmcd3Z0w",
-    "OTczNzY5NjY5MjYzNjQyNzA1.GA53ee.qq60iULAza8fd0gqE3N5f248JT2L5xuqfKPzAo",
-    "OTczNzcwOTY3MTExMzE1NDY4.G_ryOG.Qqyo-Tw1ucvQnDQUj1ICR94YkeKox6KiA1YS6M" ],
+    "BOT TOKEN 1",
+    "BOT TOKEN 2",
+    "BOT TOKEN 3" ],
   
   "channels": [
-    "981155493856821299",
-    "981155495089959013",
-    "985553131129692171" ],
+    "SES ODASI 1",
+    "SES ODASI 2",
+    "SES ODASI 3" ],
 
   "staffRoles": [
-    "981155479545864232"],
+    "YETKİLİ İD"],
 
   "unregisterRoles": [
-    "981155481655578706"],
+    "KAYITSIZ İD"],
   
   "welcomeSound": "https://cdn.discordapp.com/attachments/856807536765698049/859455073486503936/hosgeldin.mp3",
   "staffSound": "https://cdn.discordapp.com/attachments/856807536765698049/859455065609076806/yetkili.mp3"
