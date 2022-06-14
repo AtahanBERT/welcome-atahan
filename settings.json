@@ -1,19 +1,19 @@
 {
   "tokens": [
-    "BOT TOKEN 1",
+    "OTgyOTM5NjgzODQxNTQwMTI2.GVR-Ko.-Cjm2H9cHv8C8LmjN235Cx31u7pvviLLfGhxhY",
     "BOT TOKEN 2",
     "BOT TOKEN 3" ],
   
   "channels": [
-    "SES ODASI 1",
+    "982711259956936745",
     "SES ODASI 2",
     "SES ODASI 3" ],
 
   "staffRoles": [
-    "YETKİLİ İD"],
+    "982923493245083668"],
 
   "unregisterRoles": [
-    "KAYITSIZ İD"],
+    "982932964872687636"],
   
   "welcomeSound": "https://cdn.discordapp.com/attachments/856807536765698049/859455073486503936/hosgeldin.mp3",
   "staffSound": "https://cdn.discordapp.com/attachments/856807536765698049/859455065609076806/yetkili.mp3"
