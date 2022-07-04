@@ -17,7 +17,7 @@ const { channels, staffRoles, unregisterRoles, welcomeSound, staffSound, tokens 
 
   
   client.on("ready", async () => {
-  client.user.setPresence({ activity: { name: "Viora ❤️ Yasin" }, status: "idle" });
+  client.user.setPresence({ activity: { name: "Viora ❤️ Yasin" }, status: "dnd" });
   })
   client.login(token).then(() => console.log(`${client.user.tag} Aktif!`)).catch(() => console.error(`${token} Tokeni aktif edilemedi!`));
 });
